@@ -1,0 +1,521 @@
+The **30-question SQL quiz** (from basics to advanced concepts):
+
+---
+
+### **Q1. What will the following query output?**
+```sql
+SELECT 10 + 5 AS Result;
+```
+A) `15`  
+B) `10`  
+C) `5`  
+D) `Error`
+
+**Answer:** A) `15`  
+**Explanation:** This query uses a simple arithmetic operation to add two numbers and aliases the result as `Result`.
+
+---
+
+### **Q2. What will this query output?**
+```sql
+SELECT CONCAT('Hello', ' ', 'World') AS Greeting;
+```
+A) `HelloWorld`  
+B) `Hello World`  
+C) `Hello`  
+D) `World`
+
+**Answer:** B) `Hello World`  
+**Explanation:** The `CONCAT` function combines strings with spaces and outputs `Hello World`.
+
+---
+
+### **Q3. What does this code do?**
+```sql
+CREATE TABLE Students (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT
+);
+```
+A) Creates a table with three columns  
+B) Creates a table without any columns  
+C) Outputs an error  
+D) Deletes an existing table
+
+**Answer:** A) Creates a table with three columns  
+**Explanation:** This `CREATE TABLE` statement creates a table `Students` with `ID`, `Name`, and `Age` columns, where `ID` is the primary key.
+
+---
+
+### **Q4. What is the output of this query?**
+```sql
+SELECT LOWER('SQL IS FUN');
+```
+A) `sql is fun`  
+B) `SQL IS FUN`  
+C) `sql is fun`  
+D) `Error`
+
+**Answer:** A) `sql is fun`  
+**Explanation:** The `LOWER` function converts all characters in a string to lowercase.
+
+---
+
+### **Q5. What will this query output?**
+```sql
+SELECT ROUND(123.456, 1);
+```
+A) `123.4`  
+B) `123.5`  
+C) `123`  
+D) `123.46`
+
+**Answer:** B) `123.5`  
+**Explanation:** The `ROUND` function rounds the number `123.456` to 1 decimal place.
+
+---
+
+### **Q6. What will the following query return?**
+```sql
+SELECT COUNT(*) FROM Employees;
+```
+A) Total number of rows in the `Employees` table  
+B) Total number of columns in the `Employees` table  
+C) Total number of unique rows in the `Employees` table  
+D) Error
+
+**Answer:** A) Total number of rows in the `Employees` table  
+**Explanation:** The `COUNT(*)` function returns the number of rows in the table.
+
+---
+
+### **Q7. What does this query do?**
+```sql
+SELECT DISTINCT City FROM Customers;
+```
+A) Displays duplicate cities  
+B) Removes duplicate cities and displays unique ones  
+C) Displays all cities  
+D) Throws an error  
+
+**Answer:** B) Removes duplicate cities and displays unique ones  
+**Explanation:** The `DISTINCT` keyword ensures unique values are returned.
+
+---
+
+### **Q8. What will this query output?**
+```sql
+SELECT LENGTH('Database');
+```
+A) `8`  
+B) `9`  
+C) `7`  
+D) `Error`
+
+**Answer:** A) `8`  
+**Explanation:** The `LENGTH` function calculates the number of characters in the string `Database`.
+
+---
+
+### **Q9. What does this query do?**
+```sql
+UPDATE Employees
+SET Salary = Salary + 5000
+WHERE Job_Title = 'Manager';
+```
+A) Updates the salary of all employees  
+B) Updates the salary of employees with the job title 'Manager'  
+C) Deletes the salary column  
+D) Throws an error
+
+**Answer:** B) Updates the salary of employees with the job title 'Manager'  
+**Explanation:** The `UPDATE` statement modifies rows that match the `WHERE` condition.
+
+---
+
+### **Q10. What will this query output?**
+```sql
+SELECT 20 / 0;
+```
+A) `Infinity`  
+B) `Error`  
+C) `0`  
+D) `NULL`
+
+**Answer:** B) `Error`  
+**Explanation:** Division by zero is not allowed in SQL.
+
+---
+
+### **Q11. What does this query return?**
+```sql
+SELECT MAX(Salary) FROM Employees;
+```
+A) Maximum salary in the table  
+B) Average salary in the table  
+C) Minimum salary in the table  
+D) Error  
+
+**Answer:** A) Maximum salary in the table  
+**Explanation:** The `MAX` function returns the largest value in the specified column.
+
+---
+
+### **Q12. What is the output of this query?**
+```sql
+SELECT * FROM Orders WHERE OrderDate BETWEEN '2024-01-01' AND '2024-12-31';
+```
+A) Orders placed on `2024-01-01` and `2024-12-31` only  
+B) Orders placed in the year 2024  
+C) Error  
+D) NULL
+
+**Answer:** B) Orders placed in the year 2024  
+**Explanation:** The `BETWEEN` operator filters rows within the given date range, inclusive of boundary values.
+
+---
+
+### **Q13. What is the purpose of this query?**
+```sql
+DELETE FROM Customers WHERE Country = 'Germany';
+```
+A) Deletes all rows in the `Customers` table  
+B) Deletes rows where the country is 'Germany'  
+C) Deletes the `Country` column from the table  
+D) Throws an error  
+
+**Answer:** B) Deletes rows where the country is 'Germany'  
+**Explanation:** The `DELETE` statement removes rows matching the `WHERE` condition.
+
+---
+
+### **Q14. What will this query return?**
+```sql
+SELECT EmployeeID, COUNT(*) 
+FROM Sales
+GROUP BY EmployeeID;
+```
+A) Total sales for each employee  
+B) Total employees in the table  
+C) Sum of sales for each employee  
+D) Error  
+
+**Answer:** A) Total sales for each employee  
+**Explanation:** The `GROUP BY` clause groups rows by `EmployeeID`, and the `COUNT` function counts rows in each group.
+
+---
+
+### **Q15. What does this query do?**
+```sql
+ALTER TABLE Products ADD COLUMN Stock INT;
+```
+A) Deletes the `Stock` column  
+B) Adds a new column `Stock` to the `Products` table  
+C) Updates the `Stock` column  
+D) Throws an error  
+
+**Answer:** B) Adds a new column `Stock` to the `Products` table  
+**Explanation:** The `ALTER TABLE` statement modifies an existing table by adding a new column.
+
+---
+
+### **Q16. What will the following query output?**
+```sql
+SELECT AVG(Salary) FROM Employees;
+```
+A) Total salary of all employees  
+B) Average salary of all employees  
+C) Minimum salary in the table  
+D) Error  
+
+**Answer:** B) Average salary of all employees  
+**Explanation:** The `AVG` function calculates the average of the specified column.
+
+---
+
+### **Q17. What does this query do?**
+```sql
+CREATE INDEX idx_lastname ON Employees(LastName);
+```
+A) Creates a new table called `idx_lastname`  
+B) Creates an index on the `LastName` column for faster searches  
+C) Deletes the `LastName` column  
+D) Returns an error  
+
+**Answer:** B) Creates an index on the `LastName` column for faster searches  
+**Explanation:** Indexes improve query performance for the specified column.
+
+---
+
+### **Q18. What is the output of this query?**
+```sql
+SELECT SUBSTR('DataScience', 5, 7);
+```
+A) `DataSci`  
+B) `Science`  
+C) `Sci`  
+D) `ataSci`
+
+**Answer:** B) `Science`  
+**Explanation:** The `SUBSTR` function extracts a substring starting at position 5 for a length of 7.
+
+---
+
+### **Q19. What will this query return?**
+```sql
+SELECT * FROM Orders WHERE Status IS NULL;
+```
+A) Rows where `Status` is empty  
+B) Rows where `Status` is `NULL`  
+C) All rows in the table  
+D) Error  
+
+**Answer:** B) Rows where `Status` is `NULL`  
+**Explanation:** The `IS NULL` condition filters rows with null values in the `Status` column.
+
+---
+
+### **Q20. What does this query do?**
+```sql
+INSERT INTO Employees (ID, Name, Age) VALUES (101, 'Alice', 30);
+```
+A) Updates the `Employees` table  
+B) Deletes a row from the `Employees` table  
+C) Adds a new row to the `Employees` table  
+D) Throws an error  
+
+**Answer:** C) Adds a new row to the `Employees` table  
+**Explanation:** The `INSERT INTO` statement adds a new record with the specified values.
+
+---
+
+### **Q21. What is the purpose of this query?**
+```sql
+DROP TABLE Orders;
+```
+A) Deletes all rows from the `Orders` table  
+B) Deletes the entire `Orders` table structure and data  
+C) Deletes a column in the `Orders` table  
+D) Throws an error  
+
+**Answer:** B) Deletes the entire `Orders` table structure and data  
+**Explanation:** The `DROP TABLE` statement removes the table and all its data from the database.
+
+---
+
+### **Q22. What will this query output?**
+```sql
+SELECT NOW();
+```
+A) Current date and time  
+B) Current date only  
+C) Current time only  
+D) Error  
+
+**Answer:** A) Current date and time  
+**Explanation:** The `NOW` function returns the current timestamp.
+
+---
+
+### **Q23. What does this query do?**
+```sql
+SELECT ProductName, SUM(Quantity) 
+FROM Sales 
+GROUP BY ProductName
+HAVING SUM(Quantity) > 50;
+```
+A) Groups rows by product name and filters groups with total quantity greater than 50  
+B) Filters rows with quantity greater than 50  
+C) Displays products with quantity equal to 50  
+D) Throws an error  
+
+**Answer:** A) Groups rows by product name and filters groups with total quantity greater than 50  
+**Explanation:** The `HAVING` clause applies conditions to groups formed by `GROUP BY`.
+
+---
+
+### **Q24. What will this query return?**
+```sql
+SELECT * 
+FROM Products 
+WHERE Price IN (100, 200, 300);
+```
+A) Rows where `Price` is 100, 200, or 300  
+B) Rows where `Price` is not 100, 200, or 300  
+C) All rows in the table  
+D) Error  
+
+**Answer:** A) Rows where `Price` is 100, 200, or 300  
+**Explanation:** The `IN` operator matches rows with any of the specified values.
+
+---
+
+### **Q25. What does this query do?**
+```sql
+SELECT * FROM Employees LIMIT 5;
+```
+A) Returns all rows in the table  
+B) Returns the first 5 rows in the table  
+C) Returns the last 5 rows in the table  
+D) Throws an error  
+
+**Answer:** B) Returns the first 5 rows in the table  
+**Explanation:** The `LIMIT` clause restricts the number of rows returned.
+
+---
+
+### **Q26. What is the output of this query?**
+```sql
+SELECT ABS(-25);
+```
+A) `-25`  
+B) `25`  
+C) `0`  
+D) Error  
+
+**Answer:** B) `25`  
+**Explanation:** The `ABS` function returns the absolute (non-negative) value of a number.
+
+---
+
+### **Q27. What will this query return?**
+```sql
+SELECT COALESCE(NULL, 'Default', 'Backup');
+```
+A) `NULL`  
+B) `Default`  
+C) `Backup`  
+D) Error  
+
+**Answer:** B) `Default`  
+**Explanation:** The `COALESCE` function returns the first non-null value.
+
+---
+
+### **Q28. What does this query do?**
+```sql
+RENAME TABLE OldTable TO NewTable;
+```
+A) Renames `OldTable` to `NewTable`  
+B) Creates a copy of `OldTable` as `NewTable`  
+C) Deletes `OldTable`  
+D) Throws an error  
+
+**Answer:** A) Renames `OldTable` to `NewTable`  
+**Explanation:** The `RENAME TABLE` statement changes the name of a table.
+
+---
+
+### **Q29. What is the output of this query?**
+```sql
+SELECT TRIM('   SQL   ');
+```
+A) `'SQL'`  
+B) `'   SQL   '`  
+C) `'SQL   '`  
+D) `'   SQL'`  
+
+**Answer:** A) `'SQL'`  
+**Explanation:** The `TRIM` function removes leading and trailing spaces from the string.
+
+---
+
+### **Q30. What will this query return?**
+```sql
+SELECT EmployeeID, Name 
+FROM Employees 
+ORDER BY Name DESC;
+```
+A) Employees sorted by `Name` in ascending order  
+B) Employees sorted by `Name` in descending order  
+C) Employees sorted by `EmployeeID`  
+D) Error  
+
+**Answer:** B) Employees sorted by `Name` in descending order  
+**Explanation:** The `ORDER BY` clause sorts rows, and the `DESC` keyword specifies descending order.
+
+---
+
+### **SQL Quiz**
+#### **Q1. What will this query return?**
+```sql
+SELECT COUNT(*) FROM Employees WHERE Salary > 50000;
+```
+- A) Count of all employees  
+- B) Count of employees earning less than 50000  
+- C) Count of employees earning more than 50000  
+- D) Error  
+
+**Answer:** C) Count of employees earning more than 50000  
+*Explanation:* `WHERE Salary > 50000` filters employees with salaries above 50000.
+
+---
+
+#### **Q2. What does this query do?**
+```sql
+SELECT Name, Department, MAX(Salary) 
+FROM Employees
+GROUP BY Department;
+```
+- A) Returns the maximum salary in each department  
+- B) Returns employees with maximum salaries in each department  
+- C) Error: `Name` is not in the `GROUP BY` clause  
+- D) None of the above  
+
+**Answer:** C) Error: `Name` is not in the `GROUP BY` clause  
+*Explanation:* All columns in the `SELECT` list must either be aggregated or included in the `GROUP BY` clause.
+
+---
+
+#### **Q3. What is the output of this query?**
+```sql
+SELECT Department, COUNT(*) AS TotalEmployees
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 10;
+```
+- A) Departments with exactly 10 employees  
+- B) Departments with more than 10 employees  
+- C) All departments and their employee count  
+- D) Error  
+
+**Answer:** B) Departments with more than 10 employees  
+*Explanation:* The `HAVING` clause filters groups based on the aggregate function `COUNT`.
+
+---
+
+#### **Q4. What is the purpose of an `INNER JOIN`?**
+- A) Combines rows from two tables, keeping unmatched rows  
+- B) Combines rows from two tables, keeping only matched rows  
+- C) Combines rows from two tables without any condition  
+- D) Creates a cartesian product of two tables  
+
+**Answer:** B) Combines rows from two tables, keeping only matched rows  
+*Explanation:* `INNER JOIN` returns rows where there is a match between the tables.
+
+---
+
+#### **Q5. Which of the following query creates a new table?**
+```sql
+-- Option A
+CREATE TABLE Sales (ID INT, Amount DECIMAL(10, 2));
+
+-- Option B
+INSERT INTO Sales VALUES (1, 100.50);
+
+-- Option C
+ALTER TABLE Sales ADD Column Date DATE;
+
+-- Option D
+DROP TABLE Sales;
+```
+- A) Option A  
+- B) Option B  
+- C) Option C  
+- D) Option D  
+
+**Answer:** A) Option A  
+*Explanation:* The `CREATE TABLE` statement is used to create a new table.
+
+---

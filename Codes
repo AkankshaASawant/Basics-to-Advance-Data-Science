@@ -1,0 +1,180 @@
+A 5-minute crash course on Python basics to advanced concepts:
+
+---
+
+### **1. Python Basics**
+- **Variables & Data Types**:  
+  ```python
+  x = 5  # Integer
+  y = 3.14  # Float
+  name = "Akanksha"  # String
+  is_student = True  # Boolean
+  ```
+- **Input & Output**:  
+  ```python
+  name = input("Enter your name: ")
+  print(f"Hello, {name}!")
+  ```
+- **Control Flow**:
+  ```python
+  if x > 0:
+      print("Positive")
+  elif x == 0:
+      print("Zero")
+  else:
+      print("Negative")
+  ```
+
+---
+
+### **2. Functions & Loops**
+- **Functions**:
+  ```python
+  def greet(name):
+      return f"Hello, {name}!"
+  print(greet("Akanksha"))
+  ```
+- **Loops**:
+  ```python
+  for i in range(5):
+      print(i)
+  n = 0
+  while n < 5:
+      print(n)
+      n += 1
+  ```
+
+---
+
+### **3. Data Structures**
+- **Lists**:
+  ```python
+  fruits = ["apple", "banana", "cherry"]
+  fruits.append("orange")
+  print(fruits[1])  # Access item
+  ```
+- **Tuples**:
+  ```python
+  coordinates = (10, 20)
+  print(coordinates[0])  # Immutable
+  ```
+- **Dictionaries**:
+  ```python
+  student = {"name": "Akanksha", "age": 24}
+  print(student["name"])
+  ```
+- **Sets**:
+  ```python
+  nums = {1, 2, 3, 2}
+  print(nums)  # {1, 2, 3}
+  ```
+
+---
+
+### **4. Object-Oriented Programming (OOP)**
+- **Class & Object**:
+  ```python
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def introduce(self):
+          return f"I am {self.name}, {self.age} years old."
+
+  person = Person("Akanksha", 24)
+  print(person.introduce())
+  ```
+
+---
+
+### **5. File Handling**
+```python
+with open("file.txt", "w") as file:
+    file.write("Hello, Python!")
+
+with open("file.txt", "r") as file:
+    print(file.read())
+```
+
+---
+
+### **6. Libraries**
+- **Numpy** (Math):
+  ```python
+  import numpy as np
+  arr = np.array([1, 2, 3])
+  print(arr.mean())
+  ```
+- **Pandas** (Data Analysis):
+  ```python
+  import pandas as pd
+  df = pd.DataFrame({"Name": ["Akanksha"], "Age": [24]})
+  print(df)
+  ```
+- **Matplotlib** (Visualization):
+  ```python
+  import matplotlib.pyplot as plt
+  plt.plot([1, 2, 3], [4, 5, 6])
+  plt.show()
+  ```
+
+---
+
+### **7. Advanced Topics**
+- **Comprehensions**:
+  ```python
+  squares = [x**2 for x in range(10)]
+  ```
+- **Lambda Functions**:
+  ```python
+  double = lambda x: x * 2
+  print(double(5))
+  ```
+- **Error Handling**:
+  ```python
+  try:
+      x = 10 / 0
+  except ZeroDivisionError as e:
+      print(f"Error: {e}")
+  ```
+- **Decorators**:
+  ```python
+  def decorator(func):
+      def wrapper():
+          print("Before the function")
+          func()
+          print("After the function")
+      return wrapper
+
+  @decorator
+  def say_hello():
+      print("Hello!")
+  say_hello()
+  ```
+- **Multi-threading**:
+  ```python
+  import threading
+
+  def print_numbers():
+      for i in range(5):
+          print(i)
+
+  thread = threading.Thread(target=print_numbers)
+  thread.start()
+  ```
+
+---
+
+### **8. Machine Learning Integration**
+- **Scikit-Learn** (ML Models):
+  ```python
+  from sklearn.linear_model import LinearRegression
+  model = LinearRegression()
+  X = [[1], [2], [3]]
+  y = [2, 4, 6]
+  model.fit(X, y)
+  print(model.predict([[4]]))  # Output: [8]
+  ```
+
+---

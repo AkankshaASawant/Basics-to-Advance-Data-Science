@@ -477,3 +477,79 @@ D) Error
 *Explanation:* `yield` makes `func` a generator, and `list(func())` collects all yielded values into a list.
 
 ---
+
+### **Python Quiz**
+#### **Q1. What will the following code output?**
+```python
+x = [1, 2, 3]
+y = x
+y.append(4)
+print(x)
+```
+- A) `[1, 2, 3]`  
+- B) `[1, 2, 3, 4]`  
+- C) `[1, 2, 4]`  
+- D) Error  
+
+**Answer:** B) `[1, 2, 3, 4]`  
+*Explanation:* `y` is a reference to the same list `x`. Any modification to `y` affects `x`.
+
+---
+
+#### **Q2. What is the output of this code?**
+```python
+def func(a, b=5, c=10):
+    return a + b + c
+
+print(func(3, 7))
+```
+- A) `20`  
+- B) `25`  
+- C) `15`  
+- D) Error  
+
+**Answer:** A) `20`  
+*Explanation:* `a=3`, `b=7` (overrides default), and `c=10`. Result: `3 + 7 + 10 = 20`.
+
+---
+
+#### **Q3. What does the following code snippet do?**
+```python
+print(list(map(lambda x: x**2, [1, 2, 3, 4])))
+```
+- A) `[1, 4, 9, 16]`  
+- B) `[2, 4, 6, 8]`  
+- C) `[1, 2, 3, 4]`  
+- D) Error  
+
+**Answer:** A) `[1, 4, 9, 16]`  
+*Explanation:* `map` applies the `lambda` function to each element in the list, squaring the values.
+
+---
+
+#### **Q4. Which of these data types is mutable in Python?**
+- A) Tuple  
+- B) String  
+- C) List  
+- D) Integer  
+
+**Answer:** C) List  
+*Explanation:* Lists are mutable, while tuples, strings, and integers are immutable.
+
+---
+
+#### **Q5. What will this code output?**
+```python
+a = [1, 2, 3]
+b = [4, 5]
+print(a + b * 2)
+```
+- A) `[1, 2, 3, 4, 5, 4, 5]`  
+- B) `[1, 2, 3, [4, 5], [4, 5]]`  
+- C) `[1, 2, 3, 4, 5, 4, 5, 4, 5]`  
+- D) Error  
+
+**Answer:** A) `[1, 2, 3, 4, 5, 4, 5]`  
+*Explanation:* `b * 2` creates `[4, 5, 4, 5]`, and `a + b * 2` concatenates the two lists.
+
+---

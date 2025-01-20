@@ -1,0 +1,202 @@
+A 5-minute crash course on **SQL**, covering basics to advanced concepts:
+
+---
+
+### **1. SQL Basics**
+- **What is SQL?**  
+  SQL (Structured Query Language) is used to interact with relational databases.
+
+- **Basic Syntax**:
+  ```sql
+  SELECT column_name FROM table_name;
+  ```
+
+- **Creating a Table**:
+  ```sql
+  CREATE TABLE Employees (
+      EmployeeID INT PRIMARY KEY,
+      Name VARCHAR(100),
+      Age INT,
+      Department VARCHAR(50),
+      Salary DECIMAL(10, 2)
+  );
+  ```
+
+- **Inserting Data**:
+  ```sql
+  INSERT INTO Employees (EmployeeID, Name, Age, Department, Salary)
+  VALUES (1, 'Akanksha', 24, 'Data Science', 70000.00);
+  ```
+
+- **Querying Data**:
+  ```sql
+  SELECT * FROM Employees;
+  SELECT Name, Age FROM Employees WHERE Salary > 60000;
+  ```
+
+---
+
+### **2. Filtering and Sorting**
+- **WHERE Clause**:
+  ```sql
+  SELECT * FROM Employees WHERE Age > 25 AND Department = 'Data Science';
+  ```
+
+- **ORDER BY**:
+  ```sql
+  SELECT * FROM Employees ORDER BY Salary DESC;
+  ```
+
+- **LIMIT**:
+  ```sql
+  SELECT * FROM Employees LIMIT 5;
+  ```
+
+---
+
+### **3. Aggregations**
+- **Aggregate Functions**:
+  ```sql
+  SELECT COUNT(*) AS TotalEmployees FROM Employees;
+  SELECT AVG(Salary) AS AverageSalary FROM Employees;
+  SELECT MAX(Salary) AS MaxSalary, MIN(Salary) AS MinSalary FROM Employees;
+  ```
+
+- **GROUP BY**:
+  ```sql
+  SELECT Department, COUNT(*) AS NumEmployees
+  FROM Employees
+  GROUP BY Department;
+  ```
+
+- **HAVING** (Filter Aggregated Data):
+  ```sql
+  SELECT Department, AVG(Salary) AS AvgSalary
+  FROM Employees
+  GROUP BY Department
+  HAVING AVG(Salary) > 50000;
+  ```
+
+---
+
+### **4. Joins**
+- **Inner Join**:
+  ```sql
+  SELECT e.Name, d.DepartmentName
+  FROM Employees e
+  INNER JOIN Departments d ON e.Department = d.DepartmentID;
+  ```
+
+- **Left Join**:
+  ```sql
+  SELECT e.Name, d.DepartmentName
+  FROM Employees e
+  LEFT JOIN Departments d ON e.Department = d.DepartmentID;
+  ```
+
+- **Self Join**:
+  ```sql
+  SELECT e1.Name AS Employee1, e2.Name AS Employee2
+  FROM Employees e1, Employees e2
+  WHERE e1.ManagerID = e2.EmployeeID;
+  ```
+
+---
+
+### **5. Subqueries**
+- **Simple Subquery**:
+  ```sql
+  SELECT Name FROM Employees
+  WHERE Salary > (SELECT AVG(Salary) FROM Employees);
+  ```
+
+- **Correlated Subquery**:
+  ```sql
+  SELECT Name, Salary
+  FROM Employees e1
+  WHERE Salary > (SELECT AVG(Salary) FROM Employees e2 WHERE e1.Department = e2.Department);
+  ```
+
+---
+
+### **6. Data Manipulation**
+- **Updating Records**:
+  ```sql
+  UPDATE Employees
+  SET Salary = Salary + 5000
+  WHERE Department = 'Data Science';
+  ```
+
+- **Deleting Records**:
+  ```sql
+  DELETE FROM Employees
+  WHERE Age < 25;
+  ```
+
+---
+
+### **7. Advanced SQL**
+- **Window Functions**:
+  ```sql
+  SELECT Name, Salary,
+         RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS Rank
+  FROM Employees;
+  ```
+
+- **CTE (Common Table Expression)**:
+  ```sql
+  WITH AvgSalary AS (
+      SELECT Department, AVG(Salary) AS AvgDeptSalary
+      FROM Employees
+      GROUP BY Department
+  )
+  SELECT e.Name, e.Salary, a.AvgDeptSalary
+  FROM Employees e
+  JOIN AvgSalary a ON e.Department = a.Department;
+  ```
+
+- **Indexes**:
+  ```sql
+  CREATE INDEX idx_salary ON Employees (Salary);
+  ```
+
+---
+
+### **8. Transactions**
+- **Transaction Control**:
+  ```sql
+  BEGIN TRANSACTION;
+
+  UPDATE Employees SET Salary = Salary + 1000 WHERE Department = 'Data Science';
+  
+  -- Rollback if something goes wrong
+  ROLLBACK;
+
+  -- Commit the transaction
+  COMMIT;
+  ```
+
+---
+
+### **9. SQL for Data Analysis**
+- **CASE Statement**:
+  ```sql
+  SELECT Name,
+         CASE
+             WHEN Salary > 60000 THEN 'High'
+             WHEN Salary BETWEEN 40000 AND 60000 THEN 'Medium'
+             ELSE 'Low'
+         END AS SalaryRange
+  FROM Employees;
+  ```
+
+- **Pivoting Data**:
+  ```sql
+  SELECT Department,
+         SUM(CASE WHEN Age < 30 THEN 1 ELSE 0 END) AS Under30,
+         SUM(CASE WHEN Age >= 30 THEN 1 ELSE 0 END) AS Over30
+  FROM Employees
+  GROUP BY Department;
+  ```
+
+---
